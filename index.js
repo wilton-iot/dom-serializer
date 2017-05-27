@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /*
   Module dependencies
 */
@@ -146,3 +147,5 @@ function renderCdata(elem) {
 function renderComment(elem) {
   return '<!--' + elem.data + '-->';
 }
+
+return module.exports;});

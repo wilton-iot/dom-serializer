@@ -1,8 +1,8 @@
-var expect = require('expect.js'),
-    defaultOpts = require('cheerio').prototype.options,
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var defaultOpts = require('cheerio').prototype.options,
     _ = require('lodash'),
     parse = require('cheerio/lib/parse'),
-    render = require('./index.js');
+    render = require('dom-serializer/index.js');
 
 var html = function(preset, str, options) {
   options = _.defaults(options || {}, _.defaults(preset, defaultOpts));
@@ -91,13 +91,13 @@ function testBody(html) {
   });
 
   it('should render whitespace by default', function() {
-    var str = '<a href="./haha.html">hi</a> <a href="./blah.html">blah</a>';
+    var str = '<a href="dom-serializer/haha.html">hi</a> <a href="dom-serializer/blah.html">blah</a>';
     expect(html(str)).to.equal(str);
   });
 
   it('should normalize whitespace if specified', function() {
-    var str = '<a href="./haha.html">hi</a> <a href="./blah.html">blah  </a>';
-    expect(html(str, { normalizeWhitespace: true })).to.equal('<a href="./haha.html">hi</a> <a href="./blah.html">blah </a>');
+    var str = '<a href="dom-serializer/haha.html">hi</a> <a href="dom-serializer/blah.html">blah  </a>';
+    expect(html(str, { normalizeWhitespace: true })).to.equal('<a href="dom-serializer/haha.html">hi</a> <a href="dom-serializer/blah.html">blah </a>');
   });
 
   it('should preserve multiple hyphens in data attributes', function() {
@@ -125,3 +125,5 @@ function testBody(html) {
     expect(html(str)).to.equal(str);
   });
 }
+
+return module.exports;});
