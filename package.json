@@ -31,5 +31,11 @@
   "scripts": {
     "test": "mocha test.js"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "wilton": {
+    "excludes": [
+      "Makefile",
+      "test.js"
+    ]
+  }
 }
